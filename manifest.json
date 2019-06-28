@@ -1,0 +1,26 @@
+{
+    "name": "Text Filler",
+    "description": "Fills text boxes when a button is pressed",
+    "version":  "1.0",
+    "manifest_version": 2,
+    "permissions": ["activeTab","*://*/*book-a-flight*"],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "fill.png"
+          }
+      },
+      "icons": {
+        "128": "fill.png"
+      },
+      "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+      "content_scripts": [
+        {
+          "matches": ["*://*/*book-a-flight*"],
+          "js": ["filler.js"]
+        }
+      ]
+}
