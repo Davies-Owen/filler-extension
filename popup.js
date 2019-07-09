@@ -1,5 +1,5 @@
 fillText.onclick = () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {msg: "fill"});
-    });
+    window.location.href = "popup2.html";
+    chrome.browserAction.setPopup({popup: "popup2.html"});
+
 }
